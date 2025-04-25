@@ -1,8 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    Dialogs
+
 *** Test Cases ***
-# Login Function Test
+# Login Function Tests
 #     Open the browser and login the page
 # Dropdown Test
 #     Open Browser    https://rahulshettyacademy.com/AutomationPractice/    chrome
