@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-04-23T17:11:46.116584" rpa="false" schemaversion="5">
+<suite id="s1" name="Post put delete" source="d:\VS_Code\Training\Kokela\Robot_framework\Rest_API\Post_put_delete.robot">
+<test id="s1-t1" name="Post Request Demo" line="13">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-23T17:11:47.303936" level="INFO">Creating Session using : alias=add_data, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>add_data</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-23T17:11:47.299980" elapsed="0.010036"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-23T17:11:47.313391" level="INFO">${endpoint} = /api/users</msg>
+<var>${endpoint}</var>
+<arg>/api/users</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-23T17:11:47.312187" elapsed="0.001627"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-23T17:11:47.317078" level="INFO">${body} = {'name': 'Rohit', 'job': 'SW Engineer'}</msg>
+<var>${body}</var>
+<arg>name=Rohit</arg>
+<arg>job=SW Engineer</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-23T17:11:47.315045" elapsed="0.002513"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-23T17:11:47.791602" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=Rohit&amp;job=SW+Engineer 
+ </msg>
+<msg time="2025-04-23T17:11:47.792304" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Wed, 23 Apr 2025 11:41:46 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '86', 'Connection': 'keep-alive', 'Cf-Ray': '934d17fc28e97f6d-MAA', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1745408506&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=AH1oFGZiw6G4EbqQJ8mEYIUA%2FiiUH%2BrzMAnWbIKwsCk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1745408506&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=AH1oFGZiw6G4EbqQJ8mEYIUA%2FiiUH%2BrzMAnWbIKwsCk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"56-Ov4hYgVc5pMFwQBd3wjg6X83G8U"', 'Via': '1.1 vegur', 'Cf-Cache-Status': 'DYNAMIC', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=3128&amp;min_rtt=2877&amp;rtt_var=1582&amp;sent=6&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=2837&amp;recv_bytes=886&amp;delivery_rate=834526&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=164949dc8373856d&amp;ts=296&amp;x=0"'} 
+ body={"name":"Rohit","job":"SW Engineer","id":"508","createdAt":"2025-04-23T11:41:46.481Z"} 
+ </msg>
+<msg time="2025-04-23T17:11:47.793040" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>add_data</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-23T17:11:47.320407" elapsed="0.473000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-23T17:11:47.794636" elapsed="0.004266"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-23T17:11:47.800665" elapsed="0.003160"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-23T17:11:47.808671" level="INFO">Creating Session using : alias=update_data, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>update_data</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-23T17:11:47.805718" elapsed="0.003859"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-23T17:11:47.811966" level="INFO">${endpoint} = /api/users/2</msg>
+<var>${endpoint}</var>
+<arg>/api/users/2</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-23T17:11:47.810828" elapsed="0.001549"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-23T17:11:47.814895" level="INFO">${body} = {'name': 'vinothv', 'job': 'SR.Engineerv', 'age': '44'}</msg>
+<var>${body}</var>
+<arg>name=vinothv</arg>
+<arg>job=SR.Engineerv</arg>
+<arg>age=44</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-23T17:11:47.813469" elapsed="0.001810"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-04-23T17:11:48.311654" level="INFO">PUT Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '36', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=name=vinothv&amp;job=SR.Engineerv&amp;age=44 
+ </msg>
+<msg time="2025-04-23T17:11:48.312345" level="INFO">PUT Response : url=https://reqres.in/api/users/2 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 23 Apr 2025 11:41:47 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip', 'Cf-Ray': '934d17ff2af3ad28-MAA', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1745408506&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=AH1oFGZiw6G4EbqQJ8mEYIUA%2FiiUH%2BrzMAnWbIKwsCk%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1745408506&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=AH1oFGZiw6G4EbqQJ8mEYIUA%2FiiUH%2BrzMAnWbIKwsCk%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"59-EkEya4onqlMHG0j2QO+2DCIT0pY"', 'Via': '1.1 vegur', 'Cf-Cache-Status': 'DYNAMIC', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=5747&amp;min_rtt=3505&amp;rtt_var=3664&amp;sent=6&amp;recv=7&amp;lost=0&amp;retrans=0&amp;sent_bytes=2837&amp;recv_bytes=897&amp;delivery_rate=776034&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=95b86965698d5b0e&amp;ts=346&amp;x=0"'} 
+ body={"name":"vinothv","job":"SR.Engineerv","age":"44","updatedAt":"2025-04-23T11:41:46.993Z"} 
+ </msg>
+<msg time="2025-04-23T17:11:48.312998" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>update_data</arg>
+<arg>${endpoint}</arg>
+<arg>data=${body}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-23T17:11:47.817340" elapsed="0.496007"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-23T17:11:48.314645" elapsed="0.003033"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-23T17:11:48.319299" elapsed="0.002645"/>
+</kw>
+<tag>Demo</tag>
+<status status="PASS" start="2025-04-23T17:11:47.294881" elapsed="1.029412"/>
+</test>
+<test id="s1-t2" name="Delete Request Demo" line="43">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-23T17:11:48.335756" level="INFO">Creating Session using : alias=delete_data, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>delete_data</arg>
+<arg>${base_url}</arg>
+<arg>disable_warnings=1</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-23T17:11:48.332465" elapsed="0.005336"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-23T17:11:48.344433" level="INFO">${endpoint} = /api/users/2</msg>
+<var>${endpoint}</var>
+<arg>/api/users/2</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-23T17:11:48.339800" elapsed="0.005479"/>
+</kw>
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-04-23T17:11:48.816215" level="INFO">DELETE Request : url=https://reqres.in/api/users/2 
+ path_url=/api/users/2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-04-23T17:11:48.820371" level="INFO">DELETE Response : url=https://reqres.in/api/users/2 
+ status=204, reason=No Content 
+ headers={'Date': 'Wed, 23 Apr 2025 11:41:47 GMT', 'Connection': 'keep-alive', 'Cf-Ray': '934d18029c787f73-MAA', 'Server': 'cloudflare', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1745408507&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=Tlbd%2BxvcKPaPsURnVBkKecSlqfkeG4FCqpkoG9J0HBo%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1745408507&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=Tlbd%2BxvcKPaPsURnVBkKecSlqfkeG4FCqpkoG9J0HBo%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'Cf-Cache-Status': 'DYNAMIC', 'server-timing': 'cfL4;desc="?proto=TCP&amp;rtt=5408&amp;min_rtt=2846&amp;rtt_var=2181&amp;sent=5&amp;recv=6&amp;lost=0&amp;retrans=0&amp;sent_bytes=2837&amp;recv_bytes=792&amp;delivery_rate=955727&amp;cwnd=252&amp;unsent_bytes=0&amp;cid=176ee73a31311093&amp;ts=289&amp;x=0"'} 
+ body=None 
+ </msg>
+<msg time="2025-04-23T17:11:48.828469" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<var>${response}</var>
+<arg>delete_data</arg>
+<arg>${endpoint}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-23T17:11:48.346551" elapsed="0.484416"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-23T17:11:48.838510" elapsed="0.009620"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-04-23T17:11:48.854159" elapsed="0.007164"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2025-04-23T17:11:48.874692" level="INFO">${status_code} = 204</msg>
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2025-04-23T17:11:48.866242" elapsed="0.009649"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status_code}</arg>
+<arg>204</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-04-23T17:11:48.882978" elapsed="0.003842"/>
+</kw>
+<status status="PASS" start="2025-04-23T17:11:48.328079" elapsed="0.560625"/>
+</test>
+<doc>Robot Framework Demo</doc>
+<status status="PASS" start="2025-04-23T17:11:46.134711" elapsed="2.764712"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Demo</stat>
+</tag>
+<suite>
+<stat name="Post put delete" id="s1" pass="2" fail="0" skip="0">Post put delete</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
